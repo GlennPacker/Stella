@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<div>
+    <a data-ng-click="toggle()" data-ng-if="!showFull">
+        <span data-ng-bind="planet.name"></span>
+    </a>
+
+    <a data-ng-if="showFull">
+        <button class="btn btn-default" data-ng-click="toggle()">Collapse</button>
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><span data-ng-bind="planet.name"></span></div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="col-md-12 clearfix">
+                            <strong class="col-md-5">Diameter:</strong>
+                            <span data-ng-bind="planet.diameter"></span>
+                        </div>
+
+                        <div class="col-md-12 clearfix" data-ng-if="planet.distanceFromTheSun">
+                            <strong class="col-md-5">Distance from the sun:</strong>
+                            <span data-ng-bind="planet.distanceFromTheSun"></span>
+                        </div>
+
+                        <div class="col-md-12 clearfix">
+                            <strong class="col-md-5">Mass:</strong>
+                            <span data-ng-bind="planet.mass"></span>
+                        </div>
+
+                    </div>
+
+                    <img class="planetpic" data-ng-src="/Content/Img/{{planet.picturePath}}" />
+                </div>
+            </div>
+        </div>
+
+
+        
+    </a>
+</div>
